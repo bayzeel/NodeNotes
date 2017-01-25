@@ -1,0 +1,23 @@
+{
+  "name": "node-notes",
+  "version": "1.0.0",
+  "description": "Simple node.js app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bayzeel/NodeNotes.git"
+  },
+  "author": "Basil Sklepkovich",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bayzeel/NodeNotes/issues"
+  },
+  "homepage": "https://github.com/bayzeel/NodeNotes#readme",
+  "dependencies": {
+    "lodash": "^4.17.4",
+    "yargs": "^4.7.1"
+  }
+}
