@@ -36,7 +36,15 @@ var getAll = () => {
 };
 
 var getNote = (title) => {
-    console.log("Reading note", title);
+    var notes = fetchNotes();
+    var foundNote = {};
+    notes.filter((note) => {
+        if(note.title === title){
+            foundNote.title = note.title;
+            foundNote.body = note.body;
+        }
+    });
+    return foundNote;
 };
 
 var removeNote = (title) => {
@@ -51,15 +59,22 @@ var removeNote = (title) => {
         }
     });
     saveNotes(newNotes);
-    if(!removedNote.title){
+    /*if(!removedNote.title){
         removedNote.errorMessage = `Note's title "${title}" doesn't exist, try again!`;
-    }
+    }*/
     return removedNote;
+};
+
+var logNote = (note) => {
+    console.log("--");
+    console.log(`Title: ${note.title}`);
+    console.log(`Body: ${note.body}`);
 };
 
 module.exports = {
     addNote,
     getAll,
     getNote,
-    removeNote
+    removeNote,
+    logNote
 };
