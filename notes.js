@@ -40,7 +40,21 @@ var getNote = (title) => {
 };
 
 var removeNote = (title) => {
-    console.log("Removing note", title);
+    //console.log("Removing note", title);
+    var notes = fetchNotes();
+    var removedNote = {};
+    var newNotes = notes.filter((note) => {
+        if(note.title !== title){
+            return note;
+        }else if(note.title === title){
+            removedNote.title = note.title;
+        }
+    });
+    saveNotes(newNotes);
+    if(!removedNote.title){
+        removedNote.errorMessage = `Note's title "${title}" doesn't exist, try again!`;
+    }
+    return removedNote;
 };
 
 module.exports = {
